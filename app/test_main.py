@@ -42,5 +42,5 @@ def test_should_return_correct_list_of_outdated_products(
         products: list
 ) -> None:
     with mock.patch("datetime.date") as mock_date:
-        mock_date.return_value = mocked_date
+        mock_date.today.return_value = mocked_date
         assert outdated_products(products) == expected_result
